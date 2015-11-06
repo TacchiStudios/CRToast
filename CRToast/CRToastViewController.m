@@ -58,4 +58,14 @@
     }
 }
 
+- (NSUInteger) supportedInterfaceOrientations
+{
+	UIViewController* root = [UIApplication sharedApplication].delegate.window.rootViewController;
+	if (root) {
+		return root.supportedInterfaceOrientations;
+	}
+	
+	return [super supportedInterfaceOrientations];
+}
+
 @end
